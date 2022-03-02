@@ -7,6 +7,8 @@ import sait.parser.contracts.ListADT;
 
 public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 
+	private int size;
+
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
@@ -69,14 +71,17 @@ public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 
 	@Override
 	public boolean contains(Object toFind) throws NullPointerException {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public Object[] toArray(Object[] toHold) throws NullPointerException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		toHold = (E[])(new Object [this.size()]);
+		
+		System.arraycopy(array, 0, toHold, 0, size());
+		
 	}
 
 	@Override
@@ -86,9 +91,9 @@ public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 	}
 
 	@Override
-	public Iterator iterator() {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterator<E> iterator() {
+		
+		return new ArrayBasedIterator();
 	}
 
 	@Override
@@ -101,6 +106,34 @@ public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 	public E next() throws NoSuchElementException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	/*---------------------------------INNER CLASS------------------*/
+	
+	private class ArrayBasedIterator implements Iterator<E> {
+		
+		private int position = 0;
+		private E[] copyOfElements;
+
+		@Override
+		public boolean hasNext() {
+			if(position < copyOfElements.length) {
+				return true;
+			}
+			else {
+				
+				return false;
+			}
+		
+		}
+
+		@Override
+		public E next() throws NoSuchElementException {
+			E toReturn = copyOfElements[position];
+			position++;
+						return toReturn;
+		}
+		
 	}
 	
 
