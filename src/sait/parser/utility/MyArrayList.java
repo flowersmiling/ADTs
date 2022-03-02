@@ -108,6 +108,7 @@ public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 		return null;
 	}
 	
+	
 	/*---------------------------------INNER CLASS------------------*/
 	
 	private class ArrayBasedIterator implements Iterator<E> {
