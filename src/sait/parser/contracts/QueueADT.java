@@ -1,7 +1,5 @@
 package sait.parser.contracts;
 
-import java.util.Iterator;
-
 public interface QueueADT<E> 
 {
 	/** 
@@ -140,3 +138,5 @@ public interface QueueADT<E>
 	*/
 	public int size() ;
 }
+	
+
