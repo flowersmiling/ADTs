@@ -1,5 +1,10 @@
 package sait.parser.contracts;
 
+/**
+ * @author 
+ *
+ * @param <E>
+ */
 public interface QueueADT<E> 
 {
 	/** 
@@ -128,15 +133,17 @@ public interface QueueADT<E>
 	public boolean isFull();
 
 	/** 
-	* check the size of the queue
+	* Returns the number of elements in the queue.
 	* 
 	* Precondition: has an existing queue instance
 	* 
 	* Postcondition: check the size of the queue and return its size
 	* 
-	* @return int
+	* @return number of elements in queue.
 	*/
 	public int size() ;
+	
+	
 }
 	
 
