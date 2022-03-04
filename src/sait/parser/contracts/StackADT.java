@@ -38,7 +38,7 @@ public interface StackADT<E>
 	* Postcondition: delete an object from the top of stack
 	* 
 	* @exception EmptyStackException
-	* @return object
+	* @return object,a reference to the removed element.
 	*/	
 	public Object pop() throws EmptyStackException;
 
@@ -50,7 +50,8 @@ public interface StackADT<E>
 	* Postcondition: retrieve an element from the top of stack without removing.
 	* 
 	* @exception EmptyStackException
-	* @return object
+	* 
+	* @return object,a reference to the top element of the stack.
 	*/	
 	public Object peek() throws EmptyStackException;
 
@@ -120,7 +121,7 @@ public interface StackADT<E>
 	* Postcondition: search the stack contains a specific object and return the index of the object
 	* 
 	* @param object
-	* @return int
+	* @return integer,the index of the object in a stack.
 	*/
 	public int search(Object toFind);
 
@@ -154,7 +155,7 @@ public interface StackADT<E>
 	* 
 	* Postcondition: check the size of the stack and return its size
 	* 
-	* @return int
+	* @return integer, number of elements in the stack.
 	*/
 	public int size();
 	
@@ -165,8 +166,7 @@ public interface StackADT<E>
 	 * 
 	 * Precondition: stack is not empty
 	 * 
-	 * Postcondition: top value (next to be popped)
-	 * is returned
+	 * Postcondition: top value (next to be popped)is returned.
 	 */
 	
 	public Object get();
