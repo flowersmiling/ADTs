@@ -23,7 +23,7 @@ public interface StackADT<E>
 	* 
 	* Precondition: input an object
 	* 
-	* Postcondition: add an object to the top of stack
+	* Postcondition: add an object to the top of stack,will be popped next if no intervening push
 	* 
 	* @exception NullPointerException
 	* @param object
@@ -157,5 +157,18 @@ public interface StackADT<E>
 	* @return int
 	*/
 	public int size();
+	
+	/*
+	 * Fetch a reference to the top element of the stack.
+	 * 
+	 * Returns: A reference to the top element of the stack.
+	 * 
+	 * Precondition: stack is not empty
+	 * 
+	 * Postcondition: top value (next to be popped)
+	 * is returned
+	 */
+	
+	public Object get();
 	
 }
