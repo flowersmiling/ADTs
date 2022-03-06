@@ -12,6 +12,8 @@ import sait.parser.contracts.ListADT;
  *
  */
 public class MyArrayList<E> implements ListADT<E> {
+	
+	private static final long serialVersionUID =1L;
 
 	@Override
 	public int size() {

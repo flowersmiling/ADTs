@@ -10,8 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author Chaoling Lu,Sheng Ming Yan,Mengdan Liu
- * @param <E>
+ * @author peony
  *
  */
 class MyArrayListTests {
@@ -50,7 +49,7 @@ class MyArrayListTests {
 	 * Test method for {@link sait.parser.utility.MyArrayList#add(int, java.lang.Object)}.
 	 */
 	@Test
-	void testAddIntObject() {
+	void testAddIntE() {
 		fail("Not yet implemented");
 	}
 
@@ -58,7 +57,7 @@ class MyArrayListTests {
 	 * Test method for {@link sait.parser.utility.MyArrayList#add(java.lang.Object)}.
 	 */
 	@Test
-	void testAddObject() {
+	void testAddE() {
 		fail("Not yet implemented");
 	}
 
@@ -90,7 +89,7 @@ class MyArrayListTests {
 	 * Test method for {@link sait.parser.utility.MyArrayList#remove(java.lang.Object)}.
 	 */
 	@Test
-	void testRemoveObject() {
+	void testRemoveE() {
 		fail("Not yet implemented");
 	}
 
@@ -119,10 +118,10 @@ class MyArrayListTests {
 	}
 
 	/**
-	 * Test method for {@link sait.parser.utility.MyArrayList#toArray(java.lang.Object[])}.
+	 * Test method for {@link sait.parser.utility.MyArrayList#toArray(E[])}.
 	 */
 	@Test
-	void testToArrayObjectArray() {
+	void testToArrayEArray() {
 		fail("Not yet implemented");
 	}
 
@@ -139,22 +138,6 @@ class MyArrayListTests {
 	 */
 	@Test
 	void testIterator() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link sait.parser.utility.MyArrayList#hasNext()}.
-	 */
-	@Test
-	void testHasNext() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link sait.parser.utility.MyArrayList#next()}.
-	 */
-	@Test
-	void testNext() {
 		fail("Not yet implemented");
 	}
 
