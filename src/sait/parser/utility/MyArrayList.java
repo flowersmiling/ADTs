@@ -1,13 +1,17 @@
+/**
+ * 
+ */
 package sait.parser.utility;
-
-import java.util.NoSuchElementException;
 
 import sait.parser.contracts.Iterator;
 import sait.parser.contracts.ListADT;
 
-public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
-
-	private int size;
+/**
+ * @author Chaoling Lu,Sheng Ming Yan,Mengdan Liu
+ * @param <E>
+ *
+ */
+public class MyArrayList<E> implements ListADT<E> {
 
 	@Override
 	public int size() {
@@ -22,19 +26,19 @@ public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 	}
 
 	@Override
-	public boolean add(int index, Object toAdd) throws NullPointerException, IndexOutOfBoundsException {
+	public boolean add(int index, E toAdd) throws NullPointerException, IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean add(Object toAdd) throws NullPointerException {
+	public boolean add(E toAdd) throws NullPointerException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean addAll(ListADT toAdd) throws NullPointerException {
+	public boolean addAll(ListADT<? extends E> toAdd) throws NullPointerException {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -52,13 +56,13 @@ public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 	}
 
 	@Override
-	public Object remove(Object toRemove) throws NullPointerException {
+	public E remove(E toRemove) throws NullPointerException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object set(int index, Object toChange) throws NullPointerException, IndexOutOfBoundsException {
+	public E set(int index, E toChange) throws NullPointerException, IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -70,18 +74,15 @@ public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 	}
 
 	@Override
-	public boolean contains(Object toFind) throws NullPointerException {
-		
+	public boolean contains(E toFind) throws NullPointerException {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Object[] toArray(Object[] toHold) throws NullPointerException {
-		
-		toHold = (E[])(new Object [this.size()]);
-		
-		System.arraycopy(array, 0, toHold, 0, size());
-		
+	public E[] toArray(E[] toHold) throws NullPointerException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -92,50 +93,8 @@ public class MyArrayList <E> implements ListADT <E> , Iterator<E> {
 
 	@Override
 	public Iterator<E> iterator() {
-		
-		return new ArrayBasedIterator();
-	}
-
-	@Override
-	public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public E next() throws NoSuchElementException {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
-	/*---------------------------------INNER CLASS------------------*/
-	
-	private class ArrayBasedIterator implements Iterator<E> {
-		
-		private int position = 0;
-		private E[] copyOfElements;
-
-		@Override
-		public boolean hasNext() {
-			if(position < copyOfElements.length) {
-				return true;
-			}
-			else {
-				
-				return false;
-			}
-		
-		}
-
-		@Override
-		public E next() throws NoSuchElementException {
-			E toReturn = copyOfElements[position];
-			position++;
-						return toReturn;
-		}
-		
-	}
-	
 
 }

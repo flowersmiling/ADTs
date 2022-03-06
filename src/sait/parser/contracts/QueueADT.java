@@ -1,10 +1,14 @@
 package sait.parser.contracts;
 
+import java.io.Serializable;
+
+
 /**
- * @author 
- *
+ * @author Chaoling Lu,Sheng Ming Yan,Mengdan Liu
  * @param <E>
+ *
  */
+ 
 
 
 
@@ -12,7 +16,7 @@ package sait.parser.contracts;
  * A first-in, first-out structure. Values are added at the tail, and removed
  * from the head. Used to process values in the order that they appear.
  */
-public interface QueueADT<E> 
+public interface QueueADT<E> extends Serializable 
 {
 	/** 
 	* Create a new Queue
@@ -22,7 +26,7 @@ public interface QueueADT<E>
 	* Postcondition: new a new Queue instance
 	* 
 	*/	
-	public Object MyQueue();
+	public E MyQueue();
 	
 	/** 
 	* Add an element to the tail of a queue
@@ -34,7 +38,7 @@ public interface QueueADT<E>
 	* @exception NullPointerException
 	* @param object
 	*/	
-	public void enqueue(Object toAdd) throws NullPointerException;
+	public void enqueue(E toAdd) throws NullPointerException;
 	
 	/** 
 	* Remove the head element from a queue
@@ -46,7 +50,7 @@ public interface QueueADT<E>
 	* @exception EmptyQueueException
 	* @return object
 	*/	
-	public Object dequeue() throws EmptyQueueException;
+	public E dequeue() throws EmptyQueueException;
 
 	/** 
 	* Retrieve the head element in a queue without removing it
@@ -58,7 +62,7 @@ public interface QueueADT<E>
 	* @exception EmptyStackException
 	* @return object
 	*/	
-	public Object peek() throws EmptyQueueException;
+	public E peek() throws EmptyQueueException;
 
 	/** 
 	* delete/clear the whole queue
@@ -126,7 +130,7 @@ public interface QueueADT<E>
 	* @param object[]
 	* @return an array Object[]
 	*/	
-	public Object[] toArray(Object[] holder) throws NullPointerException;
+	public E[] toArray(E[] holder) throws NullPointerException;
 
 	/** 
 	* check if the queue is full

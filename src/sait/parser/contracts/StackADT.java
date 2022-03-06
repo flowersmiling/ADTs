@@ -1,12 +1,14 @@
 package sait.parser.contracts;
 
+import java.io.Serializable;
 import java.util.EmptyStackException;
 import java.util.Iterator;
 
 /**
+ * @author Chaoling Lu,Sheng Ming Yan,Mengdan Liu
  * Class Definition: This interface represents the public contract for the Stack Abstract Data Type. 
  */
-public interface StackADT<E>
+public interface StackADT<E> extends Serializable
 {	
 	/** 
 	* Create a new Stack
@@ -28,7 +30,7 @@ public interface StackADT<E>
 	* @exception NullPointerException
 	* @param object
 	*/	
-	public void push(Object toAdd) throws NullPointerException;
+	public void push(E toAdd) throws NullPointerException;
 
 	/** 
 	* Remove the topmost element from a stack 
@@ -40,7 +42,7 @@ public interface StackADT<E>
 	* @exception EmptyStackException
 	* @return object,a reference to the removed element.
 	*/	
-	public Object pop() throws EmptyStackException;
+	public E pop() throws EmptyStackException;
 
 	/** 
 	* Retrieve the topmost element in a stack without removing it
@@ -53,7 +55,7 @@ public interface StackADT<E>
 	* 
 	* @return object,a reference to the top element of the stack.
 	*/	
-	public Object peek() throws EmptyStackException;
+	public E peek() throws EmptyStackException;
 
 	/** 
 	* delete/clear the whole stack
@@ -98,7 +100,7 @@ public interface StackADT<E>
 	* @param object[]
 	* @return an array Object[]
 	*/	
-	public Object[] toArray(Object[] holder) throws NullPointerException;
+	public E[] toArray(E[] holder) throws NullPointerException;
 
 	/** 
 	* check if the stack contains a specific object
@@ -111,7 +113,7 @@ public interface StackADT<E>
 	* @param object
 	* @return boolean true or false
 	*/	
-	public boolean contains(Object toFind) throws NullPointerException;
+	public boolean contains(E toFind) throws NullPointerException;
 
 	/** 
 	* search the stack for a specific object
@@ -123,7 +125,7 @@ public interface StackADT<E>
 	* @param object
 	* @return integer,the index of the object in a stack.
 	*/
-	public int search(Object toFind);
+	public int search(E toFind);
 
 	/** 
 	* iterate the stack
