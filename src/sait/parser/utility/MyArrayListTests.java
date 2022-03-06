@@ -9,17 +9,23 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import sait.parser.contracts.ListADT;
+
 /**
- * @author peony
- *
+ * @author Chaoling Lu,Sheng Ming Yan,Mengdan Liu
  */
 class MyArrayListTests {
+	
+	ListADT<?>list;
+	
+	
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
+		list = new MyArrayList<>();
 	}
 
 	/**
@@ -27,6 +33,7 @@ class MyArrayListTests {
 	 */
 	@AfterEach
 	void tearDown() throws Exception {
+		list = null;
 	}
 
 	/**
