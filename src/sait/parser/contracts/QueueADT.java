@@ -16,7 +16,7 @@ import java.io.Serializable;
  * A first-in, first-out structure. Values are added at the tail, and removed
  * from the head. Used to process values in the order that they appear.
  */
-public interface QueueADT<E> extends Serializable 
+public interface QueueADT<E> extends Serializable
 {
 	/** 
 	* Create a new Queue
