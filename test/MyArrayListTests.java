@@ -17,7 +17,7 @@ import sait.parser.utility.MyArrayList;
  */
 class MyArrayListTests {
 	
-	ListADT<?>list;
+	ListADT<String>list;
 	
 	
 
@@ -41,9 +41,17 @@ class MyArrayListTests {
 	 * Test method for {@link sait.parser.utility.MyArrayList#size()}.
 	 */
 	@Test
-	void testSize() {
+	void testSizeEmpty() {
+		assertEquals(0,list.size());
+	}
+	/**
+	 * Test method for {@link sait.parser.utility.MyArrayList#size()}.
+	 */
+	@Test
+	void testSizeNonEmpty() {
 		fail("Not yet implemented");
 	}
+
 
 	/**
 	 * Test method for {@link sait.parser.utility.MyArrayList#clear()}.
@@ -57,8 +65,26 @@ class MyArrayListTests {
 	 * Test method for {@link sait.parser.utility.MyArrayList#add(int, java.lang.Object)}.
 	 */
 	@Test
-	void testAddIntE() {
-		fail("Not yet implemented");
+	void testAddIntEEmpty() {
+		
+		list.add(0, "A");
+		assertEquals(1,list.size());
+		assertEquals("A",list.get(0));
+		
+		
+	}
+	/**
+	 * Test method for {@link sait.parser.utility.MyArrayList#add(int, java.lang.Object)}.
+	 */
+	@Test
+	void testAddIntENonEmpty() {
+		
+		list.add("A");
+		list.add(1,"B");
+		assertEquals(2,list.size());
+		assertEquals("B",list.get(1));
+		
+		
 	}
 
 	/**
@@ -66,7 +92,7 @@ class MyArrayListTests {
 	 */
 	@Test
 	void testAddE() {
-		fail("Not yet implemented");
+	//
 	}
 
 	/**
@@ -90,7 +116,8 @@ class MyArrayListTests {
 	 */
 	@Test
 	void testRemoveInt() {
-		fail("Not yet implemented");
+		list.remove(1);
+		
 	}
 
 	/**

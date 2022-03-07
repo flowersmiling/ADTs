@@ -35,8 +35,8 @@ public interface QueueADT<E> extends Serializable
 	* 
 	* Postcondition: add an object to the tail of a queue
 	* 
-	* @exception NullPointerException
-	* @param object
+	* @throws NullPointerException to add an empty/null object, method will throw an exception
+	* 
 	*/	
 	public void enqueue(E toAdd) throws NullPointerException;
 	
@@ -47,8 +47,8 @@ public interface QueueADT<E> extends Serializable
 	* 
 	* Postcondition: delete an object from head of a queue
 	* 
-	* @exception EmptyQueueException
-	* @return object
+	* @throws EmptyQueueException method will throw an exception when the queue is null/empty
+	* 
 	*/	
 	public E dequeue() throws EmptyQueueException;
 
@@ -59,8 +59,8 @@ public interface QueueADT<E> extends Serializable
 	* 
 	* Postcondition: retrieve an element from the head of queue without removing.
 	* 
-	* @exception EmptyStackException
-	* @return object
+	* @throws EmptyQueueException method will throw an exception when the queue is null/empty
+	* @return Reference of the first value of the queue.
 	*/	
 	public E peek() throws EmptyQueueException;
 
@@ -126,7 +126,7 @@ public interface QueueADT<E> extends Serializable
 	* 
 	* Postcondition: put a queue object array into another array
 	* 
-	* @exception NullPointerException
+	* @throws NullPointerException to arrange an empty/null object, method will throw an exception
 	* @param object[]
 	* @return an array Object[]
 	*/	

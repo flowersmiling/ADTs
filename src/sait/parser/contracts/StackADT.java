@@ -27,8 +27,8 @@ public interface StackADT<E> extends Serializable
 	* 
 	* Postcondition: add an object to the top of stack,will be popped next if no intervening push
 	* 
-	* @exception NullPointerException
-	* @param object
+	* @throws NullPointerException to add an empty/null object, method will throw an exception
+	* 
 	*/	
 	public void push(E toAdd) throws NullPointerException;
 
@@ -39,8 +39,8 @@ public interface StackADT<E> extends Serializable
 	* 
 	* Postcondition: delete an object from the top of stack
 	* 
-	* @exception EmptyStackException
-	* @return object,a reference to the removed element.
+	* @throws EmptyStackException method will throw an exception when the stack is null/empty
+	* @return a reference of the removed element.
 	*/	
 	public E pop() throws EmptyStackException;
 
@@ -51,9 +51,9 @@ public interface StackADT<E> extends Serializable
 	* 
 	* Postcondition: retrieve an element from the top of stack without removing.
 	* 
-	* @exception EmptyStackException
+	* @throws EmptyStackException method will throw an exception when the stack is null/empty
 	* 
-	* @return object,a reference to the top element of the stack.
+	* @return a reference to the top element of the stack.
 	*/	
 	public E peek() throws EmptyStackException;
 
@@ -96,7 +96,7 @@ public interface StackADT<E> extends Serializable
 	* 
 	* Postcondition: put a stack object array into another array
 	* 
-	* @exception NullPointerException
+	* @throws NullPointerException to arrange an empty/null object, method will throw an exception
 	* @param object[]
 	* @return an array Object[]
 	*/	
@@ -109,7 +109,7 @@ public interface StackADT<E> extends Serializable
 	* 
 	* Postcondition: check if the stack contains a specific object and return true if it does; otherwise, return false
 	* 
-	* @exception NullPointerException
+	* @throws NullPointerException to find an empty/null object, method will throw an exception
 	* @param object
 	* @return boolean true or false
 	*/	
