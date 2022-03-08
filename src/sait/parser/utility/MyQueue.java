@@ -32,17 +32,7 @@ public class MyQueue<E> implements QueueADT<E> {
 		return null;
 	}
 
-	@Override
-	public E peek() throws EmptyQueueException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void dequeueAll() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public boolean isEmpty() {
@@ -56,34 +46,18 @@ public class MyQueue<E> implements QueueADT<E> {
 		return null;
 	}
 
-	@Override
-	public boolean equals(QueueADT<E> E) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public E[] toArray(E[] holder) throws NullPointerException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isFull() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public E get(int index) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

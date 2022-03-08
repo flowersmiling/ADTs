@@ -61,7 +61,7 @@ public class MyArrayList<E> implements ListADT<E> {
 		}
 		// if the index of a array is not empty, move elements to the right.
 		if(this.array[index] != null) {
-			for(int i = size -2; i >= index; i--) {
+			for(int i = this.array.length -2; i >= index; i--) {
 				this.array[i] = this.array[i-1];
 				size++;
 				

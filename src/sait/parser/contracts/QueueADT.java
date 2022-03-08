@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 
 /**
- * @author Chaoling Lu,Sheng Ming Yan,Mengdan Liu
- * @param <E>
+ * @author Chaoling Lu,Sheng Ming Yan,Mengdan Liu 
+ * Class Definition: This interface represents the public contract for the Queue Abstract Data Type. 
  *
  */
  
@@ -52,27 +52,6 @@ public interface QueueADT<E> extends Serializable
 	*/	
 	public E dequeue() throws EmptyQueueException;
 
-	/** 
-	* Retrieve the head element in a queue without removing it
-	* 
-	* Precondition: queue cannot be null/empty
-	* 
-	* Postcondition: retrieve an element from the head of queue without removing.
-	* 
-	* @throws EmptyQueueException method will throw an exception when the queue is null/empty
-	* @return Reference of the first value of the queue.
-	*/	
-	public E peek() throws EmptyQueueException;
-
-	/** 
-	* delete/clear the whole queue
-	* 
-	* Precondition: has an existing queue instance
-	* 
-	* Postcondition: clear the queue, the size of the queue will become 0
-	* 
-	*/	
-	public void dequeueAll() ;
 
 	/** 
 	* check if the queue is empty
@@ -96,52 +75,6 @@ public interface QueueADT<E> extends Serializable
 	*/
 	public Iterator<E> iterator();
 
-	/** 
-	* check if the queue equals to the QueueADT element
-	* 
-	* Precondition: has an existing queue instance
-	* 
-	* Postcondition: check if the queue equals to the QueueADT element and return true if it does; otherwise, false
-	* 
-	* @param QueueADT element
-	* @return boolean true or false
-	*/
-	public boolean equals(QueueADT<E> E);
-
-	/** 
-	* change a queue into an array
-	* 
-	* Precondition: has an existing queue instance
-	* 
-	* Postcondition: change a queue to an array
-	* 
-	* @return an array Object[]
-	*/	
-	public Object[] toArray() ;
-
-	/** 
-	* put a queue object array into another array
-	* 
-	* Precondition: queue cannot be null/empty
-	* 
-	* Postcondition: put a queue object array into another array
-	* 
-	* @throws NullPointerException to arrange an empty/null object, method will throw an exception
-	* @param object[]
-	* @return an array Object[]
-	*/	
-	public E[] toArray(E[] holder) throws NullPointerException;
-
-	/** 
-	* check if the queue is full
-	* 
-	* Precondition: has an existing queue instance
-	* 
-	* Postcondition: to check if the queue is full and return true if full; otherwise, return false.
-	* 
-	* @return boolean true or false
-	*/	
-	public boolean isFull();
 
 	/** 
 	* Returns the number of elements in the queue.
@@ -153,6 +86,18 @@ public interface QueueADT<E> extends Serializable
 	* @return number of elements in queue.
 	*/
 	public int size() ;
+	
+	/*
+	 * get the first value at the head of the queue
+	 * 
+	 * Precondition: the queue is not empty 
+	 * Postcondition: the element at the head of the queue is returned 
+	 * @Return: Reference to the first value of the queue.
+	 * @throws IndexOutOfBoundsException method will throw an exception when the index is not found.
+	 */
+	
+	
+	public E get(int index) throws IndexOutOfBoundsException;
 	
 	
 }

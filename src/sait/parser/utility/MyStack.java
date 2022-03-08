@@ -34,40 +34,11 @@ public class MyStack<E> implements StackADT<E> {
 	}
 
 	@Override
-	public E peek() throws EmptyStackException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
-	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public E[] toArray(E[] holder) throws NullPointerException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean contains(E toFind) throws NullPointerException {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public int search(E toFind) {
@@ -81,11 +52,6 @@ public class MyStack<E> implements StackADT<E> {
 		return null;
 	}
 
-	@Override
-	public boolean equals(StackADT<E> E) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public int size() {
@@ -94,9 +60,14 @@ public class MyStack<E> implements StackADT<E> {
 	}
 
 	@Override
-	public Object get() {
+	public E get(int index) throws IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-}
+
+	}
+
+
+
+

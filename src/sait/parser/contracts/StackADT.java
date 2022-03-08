@@ -45,29 +45,6 @@ public interface StackADT<E> extends Serializable
 	public E pop() throws EmptyStackException;
 
 	/** 
-	* Retrieve the topmost element in a stack without removing it
-	* 
-	* Precondition: stack cannot be null/empty
-	* 
-	* Postcondition: retrieve an element from the top of stack without removing.
-	* 
-	* @throws EmptyStackException method will throw an exception when the stack is null/empty
-	* 
-	* @return a reference to the top element of the stack.
-	*/	
-	public E peek() throws EmptyStackException;
-
-	/** 
-	* delete/clear the whole stack
-	* 
-	* Precondition: has an existing stack instance
-	* 
-	* Postcondition: clear the stack, the size of the stack will become 0
-	* 
-	*/	
-	public void clear();
-
-	/** 
 	* check if the stack is empty
 	* 
 	* Precondition: has an existing stack instance
@@ -78,42 +55,6 @@ public interface StackADT<E> extends Serializable
 	*/	
 	public boolean isEmpty();
 
-	/** 
-	* change a stack into an array
-	* 
-	* Precondition: has an existing stack instance
-	* 
-	* Postcondition: change a stack to an array
-	* 
-	* @return an array Object[]
-	*/	
-	public Object[] toArray();
-
-	/** 
-	* put a stack object array into another array
-	* 
-	* Precondition: stack cannot be null/empty
-	* 
-	* Postcondition: put a stack object array into another array
-	* 
-	* @throws NullPointerException to arrange an empty/null object, method will throw an exception
-	* @param object[]
-	* @return an array Object[]
-	*/	
-	public E[] toArray(E[] holder) throws NullPointerException;
-
-	/** 
-	* check if the stack contains a specific object
-	* 
-	* Precondition: stack cannot be null/empty
-	* 
-	* Postcondition: check if the stack contains a specific object and return true if it does; otherwise, return false
-	* 
-	* @throws NullPointerException to find an empty/null object, method will throw an exception
-	* @param object
-	* @return boolean true or false
-	*/	
-	public boolean contains(E toFind) throws NullPointerException;
 
 	/** 
 	* search the stack for a specific object
@@ -138,17 +79,6 @@ public interface StackADT<E> extends Serializable
 	*/
 	public Iterator<E> iterator();
 
-	/** 
-	* check if the stack equals to the StackADT element
-	* 
-	* Precondition: has an existing stack instance
-	* 
-	* Postcondition: check if the stack equals to the StackADT element and return true if it does; otherwise, false
-	* 
-	* @param StackADT element
-	* @return boolean true or false
-	*/
-	public boolean equals(StackADT<E> E);
 
 	/** 
 	* check the size of the stack
@@ -169,8 +99,12 @@ public interface StackADT<E> extends Serializable
 	 * Precondition: stack is not empty
 	 * 
 	 * Postcondition: top value (next to be popped)is returned.
+	 * 
+	 * @throws IndexOutOfBoundsException when index is not found.
+	 * 
 	 */
 	
-	public Object get();
-	
+	public E get(int index)throws IndexOutOfBoundsException;
+
+
 }
