@@ -43,6 +43,17 @@ public interface QueueADT<E> extends Serializable
 	* 
 	*/	
 	public E dequeue() throws EmptyQueueException;
+	
+	/* 
+	* Postcondition: retrieve an element from the head of queue without removing.
+	* 
+	* @exception EmptyStackException
+	* @return object
+	* @throws EmptyQueueException method will throw an exception when the queue is null/empty
+	* @return Reference of the first value of the queue.
+	*/	
+	public E peek() throws EmptyQueueException;
+	
 
 
 	/** 

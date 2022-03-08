@@ -35,6 +35,17 @@ public interface StackADT<E> extends Serializable
 	* @return a reference of the removed element.
 	*/	
 	public E pop() throws EmptyStackException;
+	
+	/* 
+	* Postcondition: retrieve an element from the top of stack without removing.
+	* 
+	* @exception EmptyStackException
+	* @throws EmptyStackException method will throw an exception when the stack is null/empty
+	* 
+	* @return object,a reference to the top element of the stack.
+	* @return a reference to the top element of the stack.
+	*/	
+	public E peek() throws EmptyStackException;
 
 	/** 
 	* check if the stack is empty
