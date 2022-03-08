@@ -10,15 +10,7 @@ import java.util.Iterator;
  */
 public interface StackADT<E> extends Serializable
 {	
-	/** 
-	* Create a new Stack
-	* 
-	* Precondition: 
-	* 
-	* Postcondition: new a new Stack instance
-	* 
-	*/	
-	public void MyStack();
+
 
 	/** 
 	* Add an element to the top of a stack

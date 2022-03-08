@@ -18,15 +18,7 @@ import java.io.Serializable;
  */
 public interface QueueADT<E> extends Serializable
 {
-	/** 
-	* Create a new Queue
-	* 
-	* Precondition: 
-	* 
-	* Postcondition: new a new Queue instance
-	* 
-	*/	
-	public E MyQueue();
+
 	
 	/** 
 	* Add an element to the tail of a queue

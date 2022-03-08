@@ -14,11 +14,6 @@ import sait.parser.contracts.QueueADT;
  */
 public class MyQueue<E> implements QueueADT<E> {
 
-	@Override
-	public E MyQueue() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void enqueue(E toAdd) throws NullPointerException {
