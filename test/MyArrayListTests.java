@@ -5,6 +5,9 @@
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,14 +22,12 @@ class MyArrayListTests {
 	
 	ListADT<String>list;
 	
-	
-
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		list = new MyArrayList<>();
+		list = new MyArrayList(5);
 	}
 
 	/**
@@ -42,15 +43,9 @@ class MyArrayListTests {
 	 */
 	@Test
 	void testSizeEmpty() {
-		assertEquals(0,list.size());
+		assertEquals(2,list.size());
 	}
-	/**
-	 * Test method for {@link sait.parser.utility.MyArrayList#size()}.
-	 */
-	@Test
-	void testSizeNonEmpty() {
-		fail("Not yet implemented");
-	}
+	
 
 
 	/**
@@ -65,33 +60,24 @@ class MyArrayListTests {
 	 * Test method for {@link sait.parser.utility.MyArrayList#add(int, java.lang.Object)}.
 	 */
 	@Test
-	void testAddIntEEmpty() {
+	void testAdd() {
 		
 		list.add(0, "A");
-		assertEquals(1,list.size());
-		assertEquals("A",list.get(0));
-		
-		
-	}
-	/**
-	 * Test method for {@link sait.parser.utility.MyArrayList#add(int, java.lang.Object)}.
-	 */
-	@Test
-	void testAddIntENonEmpty() {
-		
-		list.add("A");
-		list.add(1,"B");
+		list.add(1, "B");
 		assertEquals(2,list.size());
-		assertEquals("B",list.get(1));
+		
 		
 		
 	}
+
 
 	/**
 	 * Test method for {@link sait.parser.utility.MyArrayList#add(java.lang.Object)}.
 	 */
 	@Test
 	void testAddE() {
+		list.add("A");
+		assertEquals(3,list.size());
 	//
 	}
 
@@ -116,7 +102,7 @@ class MyArrayListTests {
 	 */
 	@Test
 	void testRemoveInt() {
-		list.remove(1);
+		list.remove(0);
 		
 	}
 

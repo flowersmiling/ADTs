@@ -61,6 +61,12 @@ public class MyStack<E> implements StackADT<E> {
 		return null;
 	}
 
+	@Override
+	public E peek() throws EmptyStackException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	}
 

@@ -55,5 +55,11 @@ public class MyQueue<E> implements QueueADT<E> {
 		return null;
 	}
 
+	@Override
+	public E peek() throws EmptyQueueException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }
