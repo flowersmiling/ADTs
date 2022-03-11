@@ -43,7 +43,7 @@ class MyArrayListTests {
 	 */
 	@Test
 	void testSizeEmpty() {
-		assertEquals(2,list.size());
+		assertEquals(0,list.size());
 	}
 	
 
@@ -76,8 +76,8 @@ class MyArrayListTests {
 	 */
 	@Test
 	void testAddE() {
-		list.add("A");
-		assertEquals(3,list.size());
+		list.add("C");
+		assertEquals("C",list.get(3));
 	//
 	}
 
@@ -94,7 +94,7 @@ class MyArrayListTests {
 	 */
 	@Test
 	void testGet() {
-		fail("Not yet implemented");
+		assertEquals("B",list.get(1));
 	}
 
 	/**
@@ -103,6 +103,7 @@ class MyArrayListTests {
 	@Test
 	void testRemoveInt() {
 		list.remove(0);
+		assertEquals(2,list.size());
 		
 	}
 
@@ -122,13 +123,7 @@ class MyArrayListTests {
 		fail("Not yet implemented");
 	}
 
-	/**
-	 * Test method for {@link sait.parser.utility.MyArrayList#isEmpty()}.
-	 */
-	@Test
-	void testIsEmpty() {
-		fail("Not yet implemented");
-	}
+
 
 	/**
 	 * Test method for {@link sait.parser.utility.MyArrayList#contains(java.lang.Object)}.
