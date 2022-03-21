@@ -6,13 +6,6 @@ import java.io.Serializable;
 /**
  * @author Chaoling Lu,Sheng Ming Yan,Mengdan Liu 
  * Class Definition: This interface represents the public contract for the Queue Abstract Data Type. 
- *
- */
- 
-
-
-
-/* 
  * A first-in, first-out structure. Values are added at the tail, and removed
  * from the head. Used to process values in the order that they appear.
  */
@@ -44,7 +37,7 @@ public interface QueueADT<E> extends Serializable
 	*/	
 	public E dequeue() throws EmptyQueueException;
 	
-	/* 
+	/** 
 	* Postcondition: retrieve an element from the head of queue without removing.
 	* 
 	* @exception EmptyStackException
@@ -54,8 +47,6 @@ public interface QueueADT<E> extends Serializable
 	*/	
 	public E peek() throws EmptyQueueException;
 	
-
-
 	/** 
 	* check if the queue is empty
 	* 
@@ -88,9 +79,9 @@ public interface QueueADT<E> extends Serializable
 	* 
 	* @return number of elements in queue.
 	*/
-	public int size() ;
+	public int size();
 	
-	/*
+	/**
 	 * get the first value at the head of the queue
 	 * 
 	 * Precondition: the queue is not empty 
@@ -98,10 +89,7 @@ public interface QueueADT<E> extends Serializable
 	 * @Return: Reference to the first value of the queue.
 	 * @throws IndexOutOfBoundsException method will throw an exception when the index is not found.
 	 */
-	
-	
 	public E get(int index) throws IndexOutOfBoundsException;
-	
 	
 }
 	

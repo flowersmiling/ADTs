@@ -36,7 +36,7 @@ public interface StackADT<E> extends Serializable
 	*/	
 	public E pop() throws EmptyStackException;
 	
-	/* 
+	/** 
 	* Postcondition: retrieve an element from the top of stack without removing.
 	* 
 	* @exception EmptyStackException
@@ -94,20 +94,4 @@ public interface StackADT<E> extends Serializable
 	*/
 	public int size();
 	
-	/*
-	 * Fetch a reference to the top element of the stack.
-	 * 
-	 * Returns: A reference to the top element of the stack.
-	 * 
-	 * Precondition: stack is not empty
-	 * 
-	 * Postcondition: top value (next to be popped)is returned.
-	 * 
-	 * @throws IndexOutOfBoundsException when index is not found.
-	 * 
-	 */
-	
-	public E get(int index)throws IndexOutOfBoundsException;
-
-
 }
