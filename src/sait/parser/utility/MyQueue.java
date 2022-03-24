@@ -13,26 +13,61 @@ import sait.parser.contracts.QueueADT;
  *
  */
 public class MyQueue<E> implements QueueADT<E> {
+	
+	private int size;
+	private int head;
+	private int tail;
+	private E[] array;
+	private int capacity;
+	
+	
+	public MyQueue( int maxSize) {
+		
+		this.capacity = maxSize;
+		this.head = -1;
+		this.tail = -1;	
+		array = (E[]) new Object [this.capacity];
+	}
 
 
 	@Override
 	public void enqueue(E toAdd) throws NullPointerException {
-		// TODO Auto-generated method stub
 		
+		if( isFull() ) {
+			
+			throw new IndexOutOfBoundsException ("queue is full");
+			
+		}
+		else {
+			tail++;
+			
+			array[tail] = toAdd;
 	}
-
+	}
 	@Override
 	public E dequeue() throws EmptyQueueException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
-	
+	@Override
+	public boolean isFull() {
+		
+		if(size == capacity) {
+		return true;
+	}
+		else
+			return false;
+	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		if(head == tail) {
+		return true;
+	}
+		else
+			return false;
 	}
 
 	@Override
