@@ -57,6 +57,13 @@ public interface QueueADT<E> extends Serializable
 	* @return boolean true or false
 	*/	
 	public boolean isEmpty();
+	
+	/** 
+	* check if the queue is empty
+	* 
+	*/
+	
+	public boolean isFull() throws IndexOutOfBoundsException;
 
 	/** 
 	* iterate the queue
