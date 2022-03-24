@@ -101,7 +101,7 @@ public class MyQueue<E> implements QueueADT<E> {
 			throw new EmptyQueueException("Queue is Empty");
 		}
 		else
-		return array[head];
+		return array[head+1];
 	}
 
 	
