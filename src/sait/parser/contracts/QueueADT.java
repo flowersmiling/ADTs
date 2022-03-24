@@ -58,12 +58,18 @@ public interface QueueADT<E> extends Serializable
 	*/	
 	public boolean isEmpty();
 	
-	/** 
-	* check if the queue is empty
-	* 
-	*/
+	/**
+	 * (Optional Method) Returns true if the number of items in the queue
+	 * equals the length.  This operation is only implement when a fixed length
+	 * queue is required.
+	 * @return <code>true</code> if queue is at capacity.
+	 */
+	public boolean isFull();
 	
-	public boolean isFull() throws IndexOutOfBoundsException;
+	/**
+	 * dequeueAll removes all items in the queue.
+	 */
+	public void dequeueAll();
 
 	/** 
 	* iterate the queue
@@ -75,7 +81,40 @@ public interface QueueADT<E> extends Serializable
 	* @return iterator generic
 	*/
 	public Iterator<E> iterator();
-
+	
+	/**
+	 * Used to compare two Queue ADT's. To be equal two queues must contain
+	 * equal items appearing in the same order.
+	 * 
+	 * @param that the Queue ADT to be compared to this queue.
+	 * @return <code>true</code> if the queues are equal.
+	 */
+	public boolean equals( QueueADT<E> that );
+	
+	/**
+	 * Returns an array containing all of the elements in this list in proper
+	 * sequence. Obeys the general contract of the Collection.toArray method.
+	 * 
+	 * @return an array containing all of the elements in this list in proper
+	 *         sequence.
+	 */
+	public Object[] toArray();
+	
+	/**
+	 * Returns an array containing all of the elements in this list in proper
+	 * sequence; the runtime type of the returned array is that of the specified
+	 * array. Obeys the general contract of the Collection.toArray(Object[])
+	 * method.
+	 * 
+	 * @param toHold
+	 *            the array into which the elements of this queue are to be
+	 *            stored, if it is big enough; otherwise, a new array of the
+	 *            same runtime type is allocated for this purpose.
+	 * @return an array containing the elements of this queue.
+	 * @throws NullPointerException
+	 *          if the specified array is null.
+	 */
+	public E[] toArray( E[] holder ) throws NullPointerException;
 
 	/** 
 	* Returns the number of elements in the queue.
@@ -87,16 +126,6 @@ public interface QueueADT<E> extends Serializable
 	* @return number of elements in queue.
 	*/
 	public int size();
-	
-	/**
-	 * get the first value at the head of the queue
-	 * 
-	 * Precondition: the queue is not empty 
-	 * Postcondition: the element at the head of the queue is returned 
-	 * @Return: Reference to the first value of the queue.
-	 * @throws IndexOutOfBoundsException method will throw an exception when the index is not found.
-	 */
-	public E get(int index) throws IndexOutOfBoundsException;
 	
 }
 	

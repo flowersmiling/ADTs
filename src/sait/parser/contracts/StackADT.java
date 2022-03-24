@@ -57,7 +57,60 @@ public interface StackADT<E> extends Serializable
 	* @return boolean true or false
 	*/	
 	public boolean isEmpty();
-
+	
+	/**
+	 * Clears all the items from this Stack. This method returns, unless there
+	 * is an Exception (Runtime) thrown.
+	 */
+	public void clear();
+	
+	/**
+	 * Returns an array containing all of the elements in this list in proper
+	 * sequence. Obeys the general contract of the Collection.toArray method.
+	 * 
+	 * @return an array containing all of the elements in this list in proper
+	 *         sequence.
+	 */
+	public Object[] toArray();
+	
+	/**
+	 * Returns an array containing all of the elements in this list in proper
+	 * sequence; the runtime type of the returned array is that of the specified
+	 * array. Obeys the general contract of the Collection.toArray(Object[])
+	 * method.
+	 * 
+	 * @param toHold
+	 *            the array into which the elements of this stack are to be
+	 *            stored, if it is big enough; otherwise, a new array of the
+	 *            same runtime type is allocated for this purpose.
+	 * @return an array containing the elements of this stack.
+	 * @throws NullPointerException
+	 *             if the specified array is null.
+	 */
+	public E[] toArray( E[] holder ) throws NullPointerException;
+	
+	/**
+	 * Returns true if this list contains the specified element. More formally,
+	 * returns true if and only if this list contains at least one element e
+	 * such that (o==null ? e==null : o.equals(e)).
+	 * 
+	 * @param toFind
+	 *            element whose presence in this list is to be tested.
+	 * @return true if this list contains the specified element.
+	 * @throws NullPointerException
+	 *             if the specified element is null and this list does not
+	 *             support null elements.
+	 */
+	public boolean contains( E toFind ) throws NullPointerException;
+	
+	/**
+	 * Used to compare two Stack ADT's. To be equal two stacks must contain
+	 * equal items appearing in the same order.
+	 * 
+	 * @param that the Stack ADT to be compared to this stack.
+	 * @return <code>true</code> if the stacks are equal.
+	 */
+	public boolean equals( StackADT<E> that );
 
 	/** 
 	* search the stack for a specific object
