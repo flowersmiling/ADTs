@@ -14,12 +14,24 @@ import sait.parser.contracts.StackADT;
  *
  */
 public class MyStack<E> implements StackADT<E> {
-
-
+	private int size;
+	private E[] array;
+	private int top;
+	
+	public MyStack(int size) {
+		this.size = size;
+		this.array = (E[]) new Object [this.size];
+		this.top = -1;
+	}
+	
 
 	@Override
 	public void push(E toAdd) throws NullPointerException {
-		// TODO Auto-generated method stub
+		if(isFull()) {
+			throw new IndexOutOfBoundsException("Stack is full");
+		}
+		top++;
+		array[top] = toAdd;
 		
 	}
 
@@ -31,8 +43,24 @@ public class MyStack<E> implements StackADT<E> {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
+		if(top ==-1) {
+			return true;
+		}
+		else {
 		return false;
+		}
+	}
+	@Override
+	public boolean isFull() {
+		
+		if (top == size-1) {
+			return true;
+			
+		}
+		else {
+			return false;
+		}
+		
 	}
 
 
