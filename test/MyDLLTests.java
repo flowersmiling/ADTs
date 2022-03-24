@@ -1,22 +1,59 @@
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class MyDLLTests {
+import sait.parser.contracts.ListADT;
+import sait.parser.utility.MyDLL;
 
+/**
+ * test class for doubly linked list
+ * @param <E>
+ */
+class MyDLLTests<E> 
+{
+	private ListADT<E> dLinkedList;
+	
+	/** 
+	* concrete the doubly linked list class assign to dLinkedList
+	* @throws Exception - java.lang.Exception
+	*/
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() throws Exception 
+	{
+		this.dLinkedList = new MyDLL();
 	}
 
+	/** 
+	* clear doubly linked list object 
+	* @throws Exception - java.lang.Exception
+	*/
 	@AfterEach
-	void tearDown() throws Exception {
+	void tearDown() throws Exception 
+	{
+		this.dLinkedList.clear();
 	}
 
+	/** 
+	* test is empty 
+	*/
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testIsEmpty() 
+	{
+		assertTrue(this.dLinkedList.isEmpty());
+		assertEquals(0,this.dLinkedList.size());
+	}
+	
+	/** 
+	* TODO 
+	*/
+	@Test
+	void testAdd()
+	{
+		
 	}
 
 }
