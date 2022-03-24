@@ -3,6 +3,8 @@
  */
 package sait.parser.utility;
 
+import java.util.NoSuchElementException;
+
 import sait.parser.contracts.EmptyQueueException;
 import sait.parser.contracts.Iterator;
 import sait.parser.contracts.QueueADT;
@@ -12,7 +14,7 @@ import sait.parser.contracts.QueueADT;
  * @param <E>
  *
  */
-public class MyQueue<E> implements QueueADT<E> {
+public class MyQueue<E> implements QueueADT<E>, Iterator<E> {
 	
 	private int size;
 	private int head;
@@ -20,6 +22,11 @@ public class MyQueue<E> implements QueueADT<E> {
 	private E[] array;
 	private int capacity;
 	
+	//private MyDLL<E> list;
+	
+//	public MyQueue() {
+//		list = new MyDLL<E>();
+//	}
 	
 	public MyQueue( int maxSize) {
 		
@@ -27,6 +34,8 @@ public class MyQueue<E> implements QueueADT<E> {
 		this.head = -1;
 		this.tail = -1;	
 		array = (E[]) new Object [this.capacity];
+		
+		//list = new MyDLL<E>();
 	}
 
 
@@ -42,6 +51,8 @@ public class MyQueue<E> implements QueueADT<E> {
 			tail++;
 			
 			array[tail] = toAdd;
+			
+			//list.add(toAdd);
 	}
 	}
 	@Override
@@ -75,13 +86,6 @@ public class MyQueue<E> implements QueueADT<E> {
 			return false;
 	}
 
-	@Override
-	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 
 	@Override
 	public int size() {
@@ -102,6 +106,20 @@ public class MyQueue<E> implements QueueADT<E> {
 		}
 		else
 		return array[head+1];
+	}
+
+
+	@Override
+	public boolean hasNext() {
+		
+		return false;
+	}
+
+
+	@Override
+	public E next() throws NoSuchElementException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

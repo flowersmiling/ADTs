@@ -13,15 +13,23 @@ import sait.parser.contracts.StackADT;
  * @param <E>
  *
  */
-public class MyStack<E> implements StackADT<E> {
+public class MyStack<E> implements StackADT<E>, Iterator<E> {
 	private int size;
 	private E[] array;
 	private int top;
+	
+//	private MyDLL<E> list;
+		
+//	public MyStack() {
+//		list = new MyDLL<E>();
+//	}
 	
 	public MyStack(int size) {
 		this.size = size;
 		this.array = (E[]) new Object [this.size];
 		this.top = -1;
+		
+//		list = new MyDLL<E>();
 	}
 	
 
@@ -33,6 +41,7 @@ public class MyStack<E> implements StackADT<E> {
 		top++;
 		array[top] = toAdd;
 		
+//		list.add(toAdd);
 	}
 
 	@Override
@@ -70,12 +79,6 @@ public class MyStack<E> implements StackADT<E> {
 		return 0;
 	}
 
-	@Override
-	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 	@Override
 	public int size() {
@@ -91,6 +94,20 @@ public class MyStack<E> implements StackADT<E> {
 
 	@Override
 	public E peek() throws EmptyStackException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public boolean hasNext() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public E next() {
 		// TODO Auto-generated method stub
 		return null;
 	}

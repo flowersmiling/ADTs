@@ -71,17 +71,6 @@ public interface StackADT<E> extends Serializable
 	*/
 	public int search(E toFind);
 
-	/** 
-	* iterate the stack
-	* 
-	* Precondition: has an existing stack instance
-	* 
-	* Postcondition: iterate the stack contains a specific object and return the iterator
-	* 
-	* @return iterator generic
-	*/
-	public Iterator<E> iterator();
-
 
 	/** 
 	* check the size of the stack

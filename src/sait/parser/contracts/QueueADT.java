@@ -65,17 +65,6 @@ public interface QueueADT<E> extends Serializable
 	
 	public boolean isFull() throws IndexOutOfBoundsException;
 
-	/** 
-	* iterate the queue
-	* 
-	* Precondition: has an existing queue instance
-	* 
-	* Postcondition: iterate the queue contains a specific object and return the iterator
-	* 
-	* @return iterator generic
-	*/
-	public Iterator<E> iterator();
-
 
 	/** 
 	* Returns the number of elements in the queue.
