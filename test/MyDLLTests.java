@@ -48,12 +48,16 @@ class MyDLLTests<E>
 	}
 	
 	/** 
-	* TODO 
+	* Appends the specified element to the end of this doubly linked list. 
 	*/
 	@Test
 	void testAdd()
 	{
-		
+		this.dLinkedList.add((E) "abc");
+		this.dLinkedList.add((E) "def");
+		this.dLinkedList.add((E) "ghi");
+		this.dLinkedList.add((E) "jkl");
+		this.dLinkedList.add((E) "mno");
 	}
 
 }
