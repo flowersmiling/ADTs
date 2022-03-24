@@ -46,12 +46,17 @@ public class MyQueue<E> implements QueueADT<E> {
 	}
 	@Override
 	public E dequeue() throws EmptyQueueException {
+		if(isEmpty()) {
+			throw new EmptyQueueException("Queue is Empty");
+		}
 		
-		return null;
+		head++;
+		return array[head];
+		
 	}
-
+	
 	@Override
-	public boolean isFull() {
+	public boolean isFull() throws IndexOutOfBoundsException{
 		
 		if(size == capacity) {
 		return true;
@@ -92,8 +97,11 @@ public class MyQueue<E> implements QueueADT<E> {
 
 	@Override
 	public E peek() throws EmptyQueueException {
-		// TODO Auto-generated method stub
-		return null;
+		if(isEmpty()) {
+			throw new EmptyQueueException("Queue is Empty");
+		}
+		else
+		return array[head];
 	}
 
 	
