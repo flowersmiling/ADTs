@@ -29,7 +29,7 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 		this.array = (E[]) new Object [this.size];
 		this.top = -1;
 		
-//		list = new MyDLL<E>();
+		list = new MyDLL<E>();
 	}
 	
 
@@ -41,13 +41,14 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 		top++;
 		array[top] = toAdd;
 		
-//		list.add(toAdd);
+		list.add(toAdd);
 	}
 
 	@Override
 	public E pop() throws EmptyStackException {
-		// TODO Auto-generated method stub
-		return null;
+			E e = this.list.get(this.list.size()-1);
+			list.remove(list.size()-1);
+		return e;
 	}
 
 	@Override
@@ -75,15 +76,18 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 
 	@Override
 	public int search(E toFind) {
-		// TODO Auto-generated method stub
-		return 0;
+		for(int i=0;i<this.list.size()-1;i++) {
+			if(toFind.equals(this.list.get(i)) || toFind == this.list.get(i)) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.list.size();
 	}
 
 	@Override
@@ -94,22 +98,22 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 
 	@Override
 	public E peek() throws EmptyStackException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.list.get(this.list.size()-1);
 	}
 
 
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return this.list.hasNext();
 	}
 
 
 	@Override
 	public E next() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.list.next();
 	}
 
 
