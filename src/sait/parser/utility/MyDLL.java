@@ -5,14 +5,43 @@ import sait.parser.contracts.Iterator;
 import sait.parser.contracts.ListADT;
 import sait.parser.models.MyDLLNode;
 
+/**
+ * doubly-linked List data model implements ListADT and Iterator
+ */
 public class MyDLL<E> implements ListADT<E>, Iterator<E> 
 {
+	/**
+	 *define doubly-linked List node head and tail
+	 */
 	private MyDLLNode<E> head,tail;
+	/**
+	 *the doubly-linked List size 
+	 */
 	private int size;
+	/**
+	 *the max number of items in the doubly-linked List data model 
+	 */
+	private int maxsize;
+	/**
+	 *Iterator for the doubly-linked List data model
+	 */
 	private MyDLL<E>.DoubleListIterator dllIterator;
 	
+	/**
+	 * the doubly-linked List data model constructor
+	 */
 	public MyDLL()
 	{
+		this.head = this.tail = null;
+	}
+	
+	/**
+	 * the doubly-linked List data model constructor with the max items
+	 * @param maxsize
+	 */
+	public MyDLL(int maxsize)
+	{
+		this.maxsize = maxsize;
 		this.head = this.tail = null;
 	}
 	

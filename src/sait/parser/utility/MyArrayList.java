@@ -30,8 +30,14 @@ import java.util.NoSuchElementException;
         //capacity of a array
         private int size;
         private MyArrayList<E>.ArrayBasedIterator myIter;
+        
+        //private ListADT<E> list[];
 
-
+        
+        public MyArrayList() {
+        	array = (E[]) new Object[10];
+        	this.myIter = new ArrayBasedIterator(); 
+        }
 
 
         public  MyArrayList(int i) {

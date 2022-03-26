@@ -18,11 +18,11 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 	private E[] array;
 	private int top;
 	
-//	private MyDLL<E> list;
+	private MyDLL<E> list;
 		
-//	public MyStack() {
-//		list = new MyDLL<E>();
-//	}
+	public MyStack() {		
+		this.list = new MyDLL<E>();
+	}
 	
 	public MyStack(int size) {
 		this.size = size;
