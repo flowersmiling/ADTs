@@ -125,7 +125,7 @@ class MyArrayListTest<E> {
 		this.arrayList.add(1, (E) "d");
 		
 		/**
-		 * arraylist should now be:
+		 * arraylist should now be: 
 		 * 
 		 * b, c, d, a
 		 */
