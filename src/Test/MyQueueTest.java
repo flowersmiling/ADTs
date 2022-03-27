@@ -392,7 +392,7 @@ class MyQueueTest<E> {
 		 * a, b, c, d
 		 */
 		
-		String[] array = (String[]) this.myqueue.toArray();
+		Object[] array = (Object[]) this.myqueue.toArray();
 		
 		/**
 		 * Now array should now be:

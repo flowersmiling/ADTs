@@ -410,7 +410,7 @@ class MyStackTest<E> {
 		 * a, b, c, d
 		 */
 		
-		String[] array = (String[]) this.mystack.toArray();
+		Object[] array = (Object[]) this.mystack.toArray();
 		
 		/**
 		 * Now array should now be:

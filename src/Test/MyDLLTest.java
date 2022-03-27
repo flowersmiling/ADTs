@@ -485,7 +485,7 @@ class MyDLLTest<E> {
 		 * a, b, c, d
 		 */
 		
-		String[] array = (String[]) this.doubleLinkedList.toArray();
+		Object[] array = (Object[]) this.doubleLinkedList.toArray();
 		
 		/**
 		 * Now array should now be:
