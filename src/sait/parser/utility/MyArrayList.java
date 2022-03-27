@@ -69,60 +69,66 @@ import java.util.NoSuchElementException;
         @Override
         public boolean add(int index, E toAdd) throws NullPointerException, IndexOutOfBoundsException {
 
-//            try {
-//                if (index < 0 || index > size) {
-//
-//                    return false;
-//                }
-//                if (toAdd== null) {
-//
-//                    return false;
-//                }
-//
-//                if (this.array[index] == null) {
-//                    this.array[index] = toAdd;
-//                    size++;
-//                    return true;
-//                }
+        	try { 
+        		E element = (E) toAdd;
+        		
+                if (index < 0 || index > size) {
+
+                    return false;
+                }
+                if (element == null) {
+
+                    return false;
+                }
+
+                if (this.array[index] == null) {
+                    this.array[index] = element;
+                    size++;
+                    return true;
+                }
 //                if(this.array[index]!=null){
 //                    for (int i = array.length - 2; i >= index; i--) {
 //                    this.array[i] = this.array[i - 1];
 // }
-//                }
-//
-//
-//                System.arraycopy(this.array, index, this.array, index + 1, size() - index - 1);
-//
-//
-//                this.array[index] = toAdd;
-//                size++;
-//                return true;
-//            } catch (ClassCastException e) {
-//                throw e;
-//            }
-        	if (size == this.array.length) {
-        		//array has no room,create a new array with double the size
-        		System.arraycopy(this.array, 0,this.array, index+1, (int) Math.pow(this.array.length, 2));
-
-        	} // if the index of a array is empty ,add the element.
-        		if(this.array[index] == null ) {
-        			this.array[index] = toAdd;
-        			size++;
-        			return true;
-
-        		}
-        		// if the index of a array is not empty, move elements to the right.
-        		if(this.array[index] != null) {
-        			for(int i = this.array.length -2; i >= index; i--) {
-        				this.array[i] = this.array[i-1];
-        				size++;
-
-        			}
-        		}
-        		return false;
-
-
+         System.arraycopy(this.array, index, this.array, index + 1, size() - index);
+         
+         this.array[index] = element;
+         size++;
+         return true;
+                
+        	}
+                catch(NullPointerException e) {
+                	throw e;
+                }
         }
+
+          
+
+        	
+        	
+//        	if (size == this.array.length) {
+//        		//array has no room,create a new array with double the size
+//        		System.arraycopy(this.array, 0,this.array, index+1, (int) Math.pow(this.array.length, 2));
+//
+//        	} // if the index of a array is empty ,add the element.
+//        		if(this.array[index] == null ) {
+//        			this.array[index] = toAdd;
+//        			size++;
+//        			return true;
+//
+//        		}
+//        		// if the index of a array is not empty, move elements to the right.
+//        		if(this.array[index] != null) {
+//        			for(int i = size -2; i >= index; i--) {
+//        				this.array[i] = this.array[i-1];
+//        				size++;
+//
+//        			}
+//        		}
+//        		return false;
+//
+//
+//        }
         
 //        private ListADT<E>[] extendSize() {
 //        	ListADT<E>[] list2 = new ListADT[this.list.length];
@@ -183,14 +189,14 @@ import java.util.NoSuchElementException;
 
         @Override
         public E remove(int index) throws IndexOutOfBoundsException {
-            Object element = this.array[index];
-            // this.elements[index] = null;
-// {1,2,3,4,5} index=2 12445 1245n
-            if (index < array.length - 1) {
+            Object array = this.array[index];
+
+            if (index < size - 1) {
                 System.arraycopy(this.array, index + 1, this.array, index, size() - index - 1);
             }
-            this.array[array.length- 1] = null;
-            return (E) element;
+            this.array[size- 1] = null;
+            size--;
+            return (E) array;
         }
 
         @Override
