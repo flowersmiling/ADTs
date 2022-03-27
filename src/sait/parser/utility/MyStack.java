@@ -15,21 +15,21 @@ import sait.parser.contracts.StackADT;
  */
 public class MyStack<E> implements StackADT<E>, Iterator<E> {
 	private int size;
-	private E[] array;
+//	private E[] array;
 	private int top;
+	private int capacity;
 	
-	private MyDLL<E> list;
+	private MyArrayList<E> list;
 		
 	public MyStack() {		
-		this.list = new MyDLL<E>();
+		list = new MyArrayList<E>();
 	}
 	
-	public MyStack(int size) {
-		this.size = size;
-		this.array = (E[]) new Object [this.size];
-		this.top = -1;
-		
-		list = new MyDLL<E>();
+	public MyStack(int capacity) {
+		this.capacity = capacity;
+//		this.array = (E[]) new Object [this.size];
+//		this.top = -1;
+		list = new MyArrayList<E>(capacity);
 	}
 	
 
@@ -38,38 +38,51 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 		if(isFull()) {
 			throw new IndexOutOfBoundsException("Stack is full");
 		}
-		top++;
-		array[top] = toAdd;
+//		top++;
+//		array[top] = toAdd;
 		
 		list.add(toAdd);
 	}
 
 	@Override
 	public E pop() throws EmptyStackException {
-			E e = this.list.get(this.list.size()-1);
+			E e = list.get(list.size()-1);
 			list.remove(list.size()-1);
 		return e;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		if(top ==-1) {
+		
+		if(list.size()==0) {
 			return true;
 		}
-		else {
+		
 		return false;
-		}
+		
+//		if(top ==-1) {
+//			return true;
+//		}
+//		else {
+//		return false;
+//		}
 	}
 	@Override
 	public boolean isFull() {
 		
-		if (top == size-1) {
+		if(this.list.size()==this.capacity) {
 			return true;
-			
 		}
-		else {
-			return false;
-		}
+		
+		return false;
+		
+//		if (top == size-1) {
+//			return true;
+//			
+//		}
+//		else {
+//			return false;
+//		}
 		
 	}
 
@@ -92,8 +105,11 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 
 	@Override
 	public E get(int index) throws IndexOutOfBoundsException {
-		// TODO Auto-generated method stub
-		return null;
+		
+//		for(int i = 0;i<this.list.size()-1;i++) {
+//			if()
+//		}
+		return this.list.get(index);
 	}
 
 	@Override
@@ -114,6 +130,43 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 	public E next() {
 		
 		return this.list.next();
+	}
+
+	@Override
+	public void clear() {
+		this.list.clear();
+		
+	}
+
+	@Override
+	public Object[] toArray() {
+		
+		return this.list.toArray();
+	}
+
+	@Override
+	public E[] toArray(E[] holder) throws NullPointerException {
+		
+		return this.list.toArray(holder);
+	}
+
+	@Override
+	public boolean contains(E toFind) throws NullPointerException {
+		
+		return this.list.contains(toFind);
+	}
+
+	@Override
+	public boolean equals(StackADT<E> that) {
+		if(that.size()!=this.list.size()) {
+			return false;
+		}
+		for(int i = 0 ; i<that.size()-1;i++) {
+			if(!(((that.toArray())[i]).equals(this.list.get(i)))) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 
