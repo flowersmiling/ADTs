@@ -29,6 +29,8 @@ class MyQueueTest<E> {
 	 * Contains the myqueue that is manipulated in each test.
 	 */
 	private MyQueue<E> myqueue;
+	
+	private E[] e;
 
 
 	/**
@@ -336,7 +338,7 @@ class MyQueueTest<E> {
 		String[] elements = new String[4];
 		
 		
-		myqueue.toArray((E[])elements);
+		e = myqueue.toArray((E[])elements);
 		
 		/**
 		 * Now E[] should now be:
@@ -348,19 +350,19 @@ class MyQueueTest<E> {
 		assertFalse(this.myqueue.isEmpty());
 		
 		// Test the size is 8
-		assertEquals(4, elements.length);
+		assertEquals(4, e.length);
 
 		// Test the forth value is a
-		assertEquals("a", elements[0]);
+		assertEquals("a", e[0]);
 
 		// Test the fifth value is b
-		assertEquals("b", elements[1]);
+		assertEquals("b", e[1]);
 		
 		// Test the sixth value is c
-		assertEquals("c", elements[2]);
+		assertEquals("c", e[2]);
 		
 		// Test the seventh value is d
-		assertEquals("d", elements[3]);
+		assertEquals("d", e[3]);
 		
 		// test the try-throw in Mymyqueue methods 
 		try {			

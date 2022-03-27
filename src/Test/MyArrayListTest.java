@@ -22,6 +22,8 @@ import sait.parser.utility.MyArrayList;
  */
 class MyArrayListTest<E> {
 	
+	private E[] e;
+	
 	/**
 	 * Contains the arrayList that is manipulated in each test.
 	 */
@@ -429,7 +431,7 @@ class MyArrayListTest<E> {
 		String[] elements = new String[4];
 		
 		
-		this.arrayList.toArray((E[])elements);
+		e = this.arrayList.toArray((E[]) elements);
 		
 		/**
 		 * Now E[] should now be:
@@ -437,20 +439,20 @@ class MyArrayListTest<E> {
 		 * a, b, c, d
 		 */
 		
-		// Test the size is 8
-		assertEquals(4, elements.length);
+		// Test the size is 4
+		assertEquals(4, e.length);
 
 		// Test the forth value is a
-		assertEquals("a", elements[0]);
+		assertEquals("a", e[0]);
 
 		// Test the fifth value is b
-		assertEquals("b", elements[1]);
+		assertEquals("b", e[1]);
 		
 		// Test the sixth value is c
-		assertEquals("c", elements[2]);
+		assertEquals("c", e[2]);
 		
 		// Test the seventh value is d
-		assertEquals("d", elements[3]);
+		assertEquals("d", e[3]);
 		
 		// test the try-throw in MyArrayList methods 
 		try {			

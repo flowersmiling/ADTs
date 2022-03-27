@@ -22,6 +22,8 @@ import sait.parser.utility.MyDLL;
  */
 class MyDLLTest<E> {
 	
+	private E[] e;
+	
 	/**
 	 * Contains the doubleLinkedList that is manipulated in each test.
 	 */
@@ -429,7 +431,7 @@ class MyDLLTest<E> {
 		String[] elements = new String[4];
 		
 		
-		doubleLinkedList.toArray((E[])elements);
+		e = doubleLinkedList.toArray((E[])elements);
 		
 		/**
 		 * Now E[] should now be:
@@ -440,20 +442,20 @@ class MyDLLTest<E> {
 		// Test the doubleLinkedList is not empty.
 		assertFalse(this.doubleLinkedList.isEmpty());
 		
-		// Test the size is 8
-		assertEquals(4, elements.length);
+		// Test the size is 4
+		assertEquals(4, e.length);
 
 		// Test the forth value is a
-		assertEquals("a", elements[0]);
+		assertEquals("a", e[0]);
 
 		// Test the fifth value is b
-		assertEquals("b", elements[1]);
+		assertEquals("b", e[1]);
 		
 		// Test the sixth value is c
-		assertEquals("c", elements[2]);
+		assertEquals("c", e[2]);
 		
 		// Test the seventh value is d
-		assertEquals("d", elements[3]);
+		assertEquals("d", e[3]);
 		
 		// test the try-throw in MydoubleLinkedList methods 
 		try {			

@@ -20,6 +20,8 @@ import sait.parser.utility.MyStack;
  */
 class MyStackTest<E> {
 	
+	private E[] e;
+	
 	/**
 	 * Contains the mystack that is manipulated in each test.
 	 */
@@ -355,7 +357,7 @@ class MyStackTest<E> {
 		String[] elements = new String[4];
 		
 		
-		mystack.toArray((E[])elements);
+		e = mystack.toArray((E[])elements);
 		
 		/**
 		 * Now E[] should now be:
@@ -367,19 +369,19 @@ class MyStackTest<E> {
 		assertFalse(this.mystack.isEmpty());
 		
 		// Test the size is 8
-		assertEquals(4, elements.length);
+		assertEquals(4, e.length);
 
 		// Test the forth value is a
-		assertEquals("a", elements[0]);
+		assertEquals("a", e[0]);
 
 		// Test the fifth value is b
-		assertEquals("b", elements[1]);
+		assertEquals("b", e[1]);
 		
 		// Test the sixth value is c
-		assertEquals("c", elements[2]);
+		assertEquals("c", e[2]);
 		
 		// Test the seventh value is d
-		assertEquals("d", elements[3]);
+		assertEquals("d", e[3]);
 		
 		// test the try-throw in Mymystack methods 
 		try {			
