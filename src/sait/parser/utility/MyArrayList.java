@@ -46,7 +46,7 @@ import java.util.NoSuchElementException;
             if (i < 0) {
                 throw new IndexOutOfBoundsException("size must bigger than 0");
             }
-            array = (E[]) new Object [10];
+            array = (E[]) new Object [i];
             
 //            list =  new ListADT[i];
 
@@ -105,7 +105,7 @@ import java.util.NoSuchElementException;
         
 //        private ListADT<E>[] extendSize() {
 //        	ListADT<E>[] list2 = new ListADT[this.list.length];
-//        	System.arraycopy(this.list, 0,list2,0, this.size-1);
+//        	System.arraycopy(this.list, 0,list2,0, this.size);
 //        	return list2;
 //        }
 
@@ -238,6 +238,27 @@ import java.util.NoSuchElementException;
             this.myIter = new ArrayBasedIterator();
             return myIter;
         }
+        
+        //arraylist = {1}
+        //int i =0;
+        //while(arraylist.hasNext()){
+        // print..[i];
+        //i++;
+        //}
+        
+		@Override
+		public boolean hasNext() {
+//			E[] array2 = this.array;
+			System.arraycopy(this.array, 0, this.array, 0, size()-1);
+			return this.array.length!=0;
+		}
+
+
+		@Override
+		public E next() throws NoSuchElementException {
+			
+            return toReturn;
+		}
 
         /*---------------------------------INNER CLASS------------------*/
         private class ArrayBasedIterator implements Iterator<E> {
@@ -264,18 +285,8 @@ import java.util.NoSuchElementException;
 
         }
 
-		@Override
-		public boolean hasNext() {
-			// TODO Auto-generated method stub
-			return false;
-		}
 
 
-		@Override
-		public E next() throws NoSuchElementException {
-			// TODO Auto-generated method stub
-			return null;
-		}
     }
 
 

@@ -35,12 +35,6 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 
 	@Override
 	public void push(E toAdd) throws NullPointerException {
-		if(isFull()) {
-			throw new IndexOutOfBoundsException("Stack is full");
-		}
-//		top++;
-//		array[top] = toAdd;
-		
 		list.add(toAdd);
 	}
 
@@ -67,24 +61,6 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 //		return false;
 //		}
 	}
-	@Override
-	public boolean isFull() {
-		
-		if(this.list.size()==this.capacity) {
-			return true;
-		}
-		
-		return false;
-		
-//		if (top == size-1) {
-//			return true;
-//			
-//		}
-//		else {
-//			return false;
-//		}
-		
-	}
 
 
 	@Override
@@ -103,14 +79,6 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 		return this.list.size();
 	}
 
-	@Override
-	public E get(int index) throws IndexOutOfBoundsException {
-		
-//		for(int i = 0;i<this.list.size()-1;i++) {
-//			if()
-//		}
-		return this.list.get(index);
-	}
 
 	@Override
 	public E peek() throws EmptyStackException {
