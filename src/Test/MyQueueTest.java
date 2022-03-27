@@ -349,7 +349,7 @@ class MyQueueTest<E> {
 		// Test the myqueue is not empty.
 		assertFalse(this.myqueue.isEmpty());
 		
-		// Test the size is 8
+		// Test the size is 4
 		assertEquals(4, e.length);
 
 		// Test the forth value is a

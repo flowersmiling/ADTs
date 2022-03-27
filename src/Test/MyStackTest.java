@@ -368,7 +368,7 @@ class MyStackTest<E> {
 		// Test the mystack is not empty.
 		assertFalse(this.mystack.isEmpty());
 		
-		// Test the size is 8
+		// Test the size is 4
 		assertEquals(4, e.length);
 
 		// Test the forth value is a
