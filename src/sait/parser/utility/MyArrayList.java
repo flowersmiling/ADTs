@@ -22,7 +22,7 @@ import java.util.NoSuchElementException;
      * @param <E>
      *
      */
-    public class MyArrayList<E> implements ListADT<E> {
+    public class MyArrayList<E> implements ListADT<E>, Iterator<E> {
 
         //attributes
         private static final long serialVersionUID =1L;
@@ -31,11 +31,13 @@ import java.util.NoSuchElementException;
         private int size;
         private MyArrayList<E>.ArrayBasedIterator myIter;
         
-        //private ListADT<E> list[];
+//        private ListADT<E>[] list;
 
         
         public MyArrayList() {
         	array = (E[]) new Object[10];
+        	
+//        	list = new ListADT[10];
         	this.myIter = new ArrayBasedIterator(); 
         }
 
@@ -45,6 +47,8 @@ import java.util.NoSuchElementException;
                 throw new IndexOutOfBoundsException("size must bigger than 0");
             }
             array = (E[]) new Object [10];
+            
+//            list =  new ListADT[i];
 
             this.myIter = new ArrayBasedIterator();
 
@@ -52,13 +56,13 @@ import java.util.NoSuchElementException;
 
         @Override
         public int size() {
-
-            return this.size;
+        	return this.size;
+//            return this.list.length;
         }
 
         @Override
         public void clear() {
-            this.size =0;
+            this.size = 0;
 
         }
 
@@ -98,17 +102,28 @@ import java.util.NoSuchElementException;
             }
 
         }
+        
+//        private ListADT<E>[] extendSize() {
+//        	ListADT<E>[] list2 = new ListADT[this.list.length];
+//        	System.arraycopy(this.list, 0,list2,0, this.size-1);
+//        	return list2;
+//        }
 
 
 
         @Override
         public boolean add(E toAdd) throws NullPointerException {
-            if( toAdd ==null) {
+            if( toAdd == null || toAdd.equals("")) {
 
                 throw new NullPointerException();
             }
+            
+           
+//           this.list = this.list.extendSize();
+            
 
-            if (size == array.length) {
+            if (size == array.length) {        	
+            	
                 //array has no room,create a new array with double the size
                 System.arraycopy(this.array, 0,this.array,0, (int) Math.pow(this.array.length, 2));
 
@@ -116,11 +131,11 @@ import java.util.NoSuchElementException;
 //			if(array[i] == null) {
 //				array[i] =toAdd;
 //
-//			}
+			}
 //
 //		}
 
-            }
+//            }
             array[size] = toAdd;
             size++;
 
@@ -248,6 +263,19 @@ import java.util.NoSuchElementException;
             }
 
         }
+
+		@Override
+		public boolean hasNext() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+
+		@Override
+		public E next() throws NoSuchElementException {
+			// TODO Auto-generated method stub
+			return null;
+		}
     }
 
 
