@@ -63,20 +63,6 @@ public class MyQueue<E> implements QueueADT<E>,Iterator<E> {
 	}
 		
 	@Override
-	public boolean isFull() throws IndexOutOfBoundsException
-	{
-		if( this.size > this.maxsize )
-		{
-			throw new IndexOutOfBoundsException();
-		}else if( this.size == this.maxsize ) {
-			return true;
-		}else {
-			return false;
-		}
-
-	}
-
-	@Override
 	public boolean isEmpty() 
 	{
 		if( this.dLinkedList.isEmpty() )
