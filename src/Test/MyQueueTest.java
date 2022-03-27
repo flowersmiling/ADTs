@@ -333,7 +333,7 @@ class MyQueueTest<E> {
 		 * a, b, c, d
 		 */
 		
-		String[] elements = { "aa","bb","cc","dd"};
+		String[] elements = new String[4];
 		
 		
 		myqueue.toArray((E[])elements);
@@ -341,26 +341,26 @@ class MyQueueTest<E> {
 		/**
 		 * Now E[] should now be:
 		 * 
-		 * aa, bb, cc, dd, a, b, c, d
+		 * a, b, c, d
 		 */
 		
 		// Test the myqueue is not empty.
 		assertFalse(this.myqueue.isEmpty());
 		
 		// Test the size is 8
-		assertEquals(8, elements.length);
+		assertEquals(4, elements.length);
 
 		// Test the forth value is a
-		assertEquals("a", elements[4]);
+		assertEquals("a", elements[0]);
 
 		// Test the fifth value is b
-		assertEquals("b", elements[5]);
+		assertEquals("b", elements[1]);
 		
 		// Test the sixth value is c
-		assertEquals("c", elements[6]);
+		assertEquals("c", elements[2]);
 		
 		// Test the seventh value is d
-		assertEquals("d", elements[7]);
+		assertEquals("d", elements[3]);
 		
 		// test the try-throw in Mymyqueue methods 
 		try {			

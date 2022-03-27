@@ -108,18 +108,19 @@ public class MyQueue<E> implements QueueADT<E>,Iterator<E> {
 			return true;
 		}else {
 			return false;
+		}
 
 	}
 
-	@Override
-	public boolean isEmpty() {
-		
-		if(head == tail) {
-		return true;
-	}
-		else
-			return false;
-	}
+//	@Override
+//	public boolean isEmpty() {
+//		
+//		if(head == tail) {
+//		return true;
+//	}
+//		else
+//			return false;
+//	}
 
 
 
