@@ -270,16 +270,20 @@ import java.util.NoSuchElementException;
 		@Override
 		public boolean hasNext() {
 //			E[] array2 = this.array;
-			System.arraycopy(this.array, 0, this.array, 0, size()-1);
-			return this.array.length!=0;
+//			System.arraycopy(this.array, 0, this.array, 0, size()-1);
+//			return this.array.length!=0;
+			return myIter.hasNext();
 		}
 
 
 		@Override
 		public E next() throws NoSuchElementException {
 			
+
 			 this.myIter = new ArrayBasedIterator();
 	            return (E) myIter.next();
+
+
 		}
 
         /*---------------------------------INNER CLASS------------------*/

@@ -127,7 +127,7 @@ class MyArrayListTest<E> {
 		/**
 		 * arraylist should now be: 
 		 * 
-		 * b, c, d, a
+		 * a, d, b, c
 		 */
 		
 		// Test the arrayList is not empty.
