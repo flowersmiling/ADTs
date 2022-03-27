@@ -69,37 +69,58 @@ import java.util.NoSuchElementException;
         @Override
         public boolean add(int index, E toAdd) throws NullPointerException, IndexOutOfBoundsException {
 
-            try {
-                if (index < 0 || index > size) {
+//            try {
+//                if (index < 0 || index > size) {
+//
+//                    return false;
+//                }
+//                if (toAdd== null) {
+//
+//                    return false;
+//                }
+//
+//                if (this.array[index] == null) {
+//                    this.array[index] = toAdd;
+//                    size++;
+//                    return true;
+//                }
+//                if(this.array[index]!=null){
+//                    for (int i = array.length - 2; i >= index; i--) {
+//                    this.array[i] = this.array[i - 1];
+// }
+//                }
+//
+//
+//                System.arraycopy(this.array, index, this.array, index + 1, size() - index - 1);
+//
+//
+//                this.array[index] = toAdd;
+//                size++;
+//                return true;
+//            } catch (ClassCastException e) {
+//                throw e;
+//            }
+        	if (size == this.array.length) {
+        		//array has no room,create a new array with double the size
+        		System.arraycopy(this.array, 0,this.array, index+1, (int) Math.pow(this.array.length, 2));
 
-                    return false;
-                }
-                if (toAdd== null) {
+        	} // if the index of a array is empty ,add the element.
+        		if(this.array[index] == null ) {
+        			this.array[index] = toAdd;
+        			size++;
+        			return true;
 
-                    return false;
-                }
+        		}
+        		// if the index of a array is not empty, move elements to the right.
+        		if(this.array[index] != null) {
+        			for(int i = this.array.length -2; i >= index; i--) {
+        				this.array[i] = this.array[i-1];
+        				size++;
 
-                if (this.array[index] == null) {
-                    this.array[index] = toAdd;
-                    size++;
-                    return true;
-                }
-                if(this.array[index]!=null){
-                    for (int i = array.length - 2; i >= index; i--) {
-                    this.array[i] = this.array[i - 1];
- }
-                }
+        			}
+        		}
+        		return false;
 
-
-                System.arraycopy(this.array, index, this.array, index + 1, size() - index - 1);
-
-
-                this.array[index] = toAdd;
-                size++;
-                return true;
-            } catch (ClassCastException e) {
-                throw e;
-            }
 
         }
         
@@ -257,7 +278,8 @@ import java.util.NoSuchElementException;
 		@Override
 		public E next() throws NoSuchElementException {
 			
-            return toReturn;
+			 this.myIter = new ArrayBasedIterator();
+	            return (E) myIter.next();
 		}
 
         /*---------------------------------INNER CLASS------------------*/
@@ -284,7 +306,6 @@ import java.util.NoSuchElementException;
             }
 
         }
-
 
 
     }
