@@ -119,15 +119,15 @@ class MyDLLTest<E> {
 	 */
 	@Test
 	void testAddwithIndex() {
-		this.doubleLinkedList.add(3, (E) "a");
-		this.doubleLinkedList.add(0, (E) "b");
-		this.doubleLinkedList.add(1, (E) "c");
-		this.doubleLinkedList.add(2, (E) "d");
+		this.doubleLinkedList.add((E) "a");
+		this.doubleLinkedList.add((E) "b");
+		this.doubleLinkedList.add((E) "c");
+		this.doubleLinkedList.add(1, (E) "d");
 		
 		/**
 		 * doubleLinkedList should now be:
 		 * 
-		 * b, c, d, a
+		 * a, d, b, c
 		 */
 		
 		// Test the doubleLinkedList is not empty.
@@ -137,16 +137,16 @@ class MyDLLTest<E> {
 		assertEquals(4, this.doubleLinkedList.size());
 
 		// Test the first value is a
-		assertEquals("b", this.doubleLinkedList.get(0));
+		assertEquals("a", this.doubleLinkedList.get(0));
 
 		// Test the second value is b
-		assertEquals("c", this.doubleLinkedList.get(1));
+		assertEquals("d", this.doubleLinkedList.get(1));
 		
 		// Test the third value is c
-		assertEquals("d", this.doubleLinkedList.get(2));
+		assertEquals("b", this.doubleLinkedList.get(2));
 		
 		// Test the fourth value is d
-		assertEquals("a", this.doubleLinkedList.get(3));
+		assertEquals("c", this.doubleLinkedList.get(3));
 		
 		// test the try-throw in MydoubleLinkedList methods 
 		try {			
