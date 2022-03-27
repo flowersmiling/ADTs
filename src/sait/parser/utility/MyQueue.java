@@ -22,13 +22,6 @@ public class MyQueue<E> implements QueueADT<E>,Iterator<E> {
 	private MyDLL<E> dLinkedList;
 	private int size;
 	private int maxsize;
-	
-
-	//private MyDLL<E> list;
-	
-//	public MyQueue() {
-//		list = new MyDLL<E>();
-//	}
 
 	/**
 	 * MyQueue data model constructor
@@ -37,15 +30,6 @@ public class MyQueue<E> implements QueueADT<E>,Iterator<E> {
 	{
 		this.dLinkedList = new MyDLL<E>();
 	}
-
-//	public MyQueue(int maxSize) {
-//		
-//		this.capacity = maxSize;
-//		this.head = -1;
-//		this.tail = -1;	
-//		array = (E[]) new Object [this.capacity];
-		
-		//list = new MyDLL<E>();
 
 	/**
 	 * MyQueue data model constructor with capacity
@@ -76,28 +60,8 @@ public class MyQueue<E> implements QueueADT<E>,Iterator<E> {
 			size--;
 			return this.dLinkedList.remove(0);
 		}
-
-		else {
-			tail++;
-			
-			array[tail] = toAdd;
-			
-			//list.add(toAdd);
 	}
-	}
-	@Override
-	public E dequeue() throws EmptyQueueException {
-		if(isEmpty()) {
-			throw new EmptyQueueException("Queue is Empty");
-		}
 		
-		head++;
-		return array[head];
-
-
-		
-	}
-	
 	@Override
 	public boolean isFull() throws IndexOutOfBoundsException
 	{
@@ -111,18 +75,6 @@ public class MyQueue<E> implements QueueADT<E>,Iterator<E> {
 		}
 
 	}
-
-//	@Override
-//	public boolean isEmpty() {
-//		
-//		if(head == tail) {
-//		return true;
-//	}
-//		else
-//			return false;
-//	}
-
-
 
 	@Override
 	public boolean isEmpty() 
