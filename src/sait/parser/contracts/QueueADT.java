@@ -58,13 +58,7 @@ public interface QueueADT<E> extends Serializable
 	*/	
 	public boolean isEmpty();
 	
-	/**
-	 * (Optional Method) Returns true if the number of items in the queue
-	 * equals the length.  This operation is only implement when a fixed length
-	 * queue is required.
-	 * @return <code>true</code> if queue is at capacity.
-	 */
-	public boolean isFull();
+
 	
 	/**
 	 * dequeueAll removes all items in the queue.

@@ -207,8 +207,7 @@ class MyQueueTest<E> {
 		// Test the size is 4
 		assertEquals(4, fullQueue.size());
 		
-		// Test if it is full
-		assertTrue(fullQueue.isFull());
+	
 		
 	}
 	

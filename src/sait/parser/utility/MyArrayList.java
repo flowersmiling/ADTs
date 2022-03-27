@@ -31,13 +31,13 @@ import java.util.NoSuchElementException;
         private int size;
         private MyArrayList<E>.ArrayBasedIterator myIter;
         
-//        private ListADT<E>[] list;
+
 
         
         public MyArrayList() {
         	array = (E[]) new Object[10];
         	
-//        	list = new ListADT[10];
+
         	this.myIter = new ArrayBasedIterator(); 
         }
 
@@ -48,8 +48,6 @@ import java.util.NoSuchElementException;
             }
             array = (E[]) new Object [i];
             
-//            list =  new ListADT[i];
-
             this.myIter = new ArrayBasedIterator();
 
         }
@@ -57,7 +55,7 @@ import java.util.NoSuchElementException;
         @Override
         public int size() {
         	return this.size;
-//            return this.list.length;
+
         }
 
         @Override
@@ -86,10 +84,7 @@ import java.util.NoSuchElementException;
                     size++;
                     return true;
                 }
-//                if(this.array[index]!=null){
-//                    for (int i = array.length - 2; i >= index; i--) {
-//                    this.array[i] = this.array[i - 1];
-// }
+
          System.arraycopy(this.array, index, this.array, index + 1, size() - index);
          
          this.array[index] = element;
@@ -102,41 +97,7 @@ import java.util.NoSuchElementException;
                 }
         }
 
-          
-
-        	
-        	
-//        	if (size == this.array.length) {
-//        		//array has no room,create a new array with double the size
-//        		System.arraycopy(this.array, 0,this.array, index+1, (int) Math.pow(this.array.length, 2));
-//
-//        	} // if the index of a array is empty ,add the element.
-//        		if(this.array[index] == null ) {
-//        			this.array[index] = toAdd;
-//        			size++;
-//        			return true;
-//
-//        		}
-//        		// if the index of a array is not empty, move elements to the right.
-//        		if(this.array[index] != null) {
-//        			for(int i = size -2; i >= index; i--) {
-//        				this.array[i] = this.array[i-1];
-//        				size++;
-//
-//        			}
-//        		}
-//        		return false;
-//
-//
-//        }
-        
-//        private ListADT<E>[] extendSize() {
-//        	ListADT<E>[] list2 = new ListADT[this.list.length];
-//        	System.arraycopy(this.list, 0,list2,0, this.size);
-//        	return list2;
-//        }
-
-
+         
 
         @Override
         public boolean add(E toAdd) throws NullPointerException {
@@ -145,24 +106,15 @@ import java.util.NoSuchElementException;
                 throw new NullPointerException();
             }
             
-           
-//           this.list = this.list.extendSize();
             
 
             if (size == array.length) {        	
             	
-                //array has no room,create a new array with double the size
+
                 System.arraycopy(this.array, 0,this.array,0, (int) Math.pow(this.array.length, 2));
 
-//		for(int i = 0; i<array.length;i++) {
-//			if(array[i] == null) {
-//				array[i] =toAdd;
-//
 			}
-//
-//		}
 
-//            }
             array[size] = toAdd;
             size++;
 
@@ -252,8 +204,7 @@ import java.util.NoSuchElementException;
 
         @Override
         public Object[] toArray() {
-            // {1,2,3} {'jon','133',1,2,3}
-// {1,2,3} arr = null
+
             Object[] toHold = new Object[size()];
             System.arraycopy(this.array, 0, toHold, 0, size());
             return toHold;
@@ -266,12 +217,7 @@ import java.util.NoSuchElementException;
             return myIter;
         }
         
-        //arraylist = {1}
-        //int i =0;
-        //while(arraylist.hasNext()){
-        // print..[i];
-        //i++;
-        //}
+
         
 		@Override
 		public boolean hasNext() {
