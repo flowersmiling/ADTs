@@ -40,9 +40,10 @@ public class MyStack<E> implements StackADT<E>, Iterator<E> {
 
 	@Override
 	public E pop() throws EmptyStackException {
-			E e = list.get(list.size()-1);
-			list.remove(list.size()-1);
-		return e;
+//			E e = list.get(list.size()-1);
+//			list.remove(list.size()-1);
+//		return e;
+		return list.remove(list.size()-1);
 	}
 
 	@Override

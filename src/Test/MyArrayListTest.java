@@ -119,10 +119,10 @@ class MyArrayListTest<E> {
 	 */
 	@Test
 	void testAddwithIndex() {
-		this.arrayList.add(3, (E) "a");
-		this.arrayList.add(0, (E) "b");
-		this.arrayList.add(1, (E) "c");
-		this.arrayList.add(2, (E) "d");
+		this.arrayList.add((E) "a");
+		this.arrayList.add((E) "b");
+		this.arrayList.add((E) "c");
+		this.arrayList.add(1, (E) "d");
 		
 		/**
 		 * arraylist should now be:
@@ -137,16 +137,16 @@ class MyArrayListTest<E> {
 		assertEquals(4, this.arrayList.size());
 
 		// Test the first value is a
-		assertEquals("b", this.arrayList.get(0));
+		assertEquals("a", this.arrayList.get(0));
 
 		// Test the second value is b
-		assertEquals("c", this.arrayList.get(1));
+		assertEquals("d", this.arrayList.get(1));
 		
 		// Test the third value is c
-		assertEquals("d", this.arrayList.get(2));
+		assertEquals("b", this.arrayList.get(2));
 		
 		// Test the fourth value is d
-		assertEquals("a", this.arrayList.get(3));
+		assertEquals("c", this.arrayList.get(3));
 		
 		// test the try-throw in MyArrayList methods 
 		try {			
