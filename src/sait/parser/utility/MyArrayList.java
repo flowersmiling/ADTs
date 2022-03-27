@@ -37,11 +37,10 @@ import java.util.NoSuchElementException;
         public MyArrayList() {
         	array = (E[]) new Object[10];
         	
-
         	this.myIter = new ArrayBasedIterator(); 
         }
 
-
+ 
         public  MyArrayList(int i) {
             if (i < 0) {
                 throw new IndexOutOfBoundsException("size must bigger than 0");
@@ -63,7 +62,7 @@ import java.util.NoSuchElementException;
             this.size = 0;
 
         }
-
+        // adding element to a specific index.
         @Override
         public boolean add(int index, E toAdd) throws NullPointerException, IndexOutOfBoundsException {
 
@@ -78,13 +77,13 @@ import java.util.NoSuchElementException;
 
                     return false;
                 }
-
+                //check if the index is empty.
                 if (this.array[index] == null) {
                     this.array[index] = element;
                     size++;
                     return true;
                 }
-
+                //if the index is not empty move the index to the right
          System.arraycopy(this.array, index, this.array, index + 1, size() - index);
          
          this.array[index] = element;
@@ -191,13 +190,13 @@ import java.util.NoSuchElementException;
             }
             return false;
         }
-// if array.length is smaller than toHold.lengh ,then create a new array double the size then add everything in.
+        // if array.length is smaller than toHold.lengh ,then create a new array double the size then add everything in.
         @Override
         public E[] toArray(E[] toHold) throws NullPointerException {
             if (toHold.length < array.length) {
                 return (E[]) toArray();
             }
-            // elements {1,2,3} toHold {7,8,,,,4,5} result {1,2,3,,,4,5}
+
             System.arraycopy(this.array, 0, toHold, 0, size());
             return toHold;
         }
@@ -217,28 +216,24 @@ import java.util.NoSuchElementException;
             return myIter;
         }
         
-
         
 		@Override
 		public boolean hasNext() {
-//			E[] array2 = this.array;
-//			System.arraycopy(this.array, 0, this.array, 0, size()-1);
-//			return this.array.length!=0;
+			this.myIter = new ArrayBasedIterator();
 			return myIter.hasNext();
 		}
 
 
 		@Override
 		public E next() throws NoSuchElementException {
-			
-
+	
 			 this.myIter = new ArrayBasedIterator();
-	            return (E) myIter.next();
+	         return (E) myIter.next();
 
 
 		}
 
-        /*---------------------------------INNER CLASS------------------*/
+        /*---------------------------------INNER CLASS--------------------------------*/
         private class ArrayBasedIterator implements Iterator<E> {
             private int position = 0;
             private E[] copyOfElements;

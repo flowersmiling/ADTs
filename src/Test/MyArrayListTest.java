@@ -487,7 +487,7 @@ class MyArrayListTest<E> {
 		Object[] array = (Object[]) this.arrayList.toArray();
 		
 		/**
-		 * Now array should now be:
+		 * Now array should  be:
 		 * 
 		 * a, b, c, d
 		 */
