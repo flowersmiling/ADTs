@@ -129,7 +129,7 @@ public class MyDLL<E> implements ListADT<E>, Iterator<E>
 		
 		if( lenght > 0 ) 
 		{
-			for(int i = 0;i < lenght-1; i++ ) 
+			for(int i = 0;i < lenght; i++ ) 
 			{
 				if( add( toAdd.get(i) ) ) 
 				{
